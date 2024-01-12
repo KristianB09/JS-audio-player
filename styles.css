@@ -1,5 +1,83 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("./fonts/Rubik-LightItalic.woff2") format("woff2"),
+    url("./fonts/Rubik-LightItalic.woff") format("woff"),
+    url("./fonts/Rubik-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik Glitch";
+  src: url("./fonts/RubikGlitch-Regular.woff2") format("woff2"),
+    url("./fonts/RubikGlitch-Regular.woff") format("woff"),
+    url("./fonts/RubikGlitch-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./fonts/Rubik-Light.woff2") format("woff2"),
+    url("./fonts/Rubik-Light.woff") format("woff"),
+    url("./fonts/Rubik-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #161616;
+}
+
+header h2 {
+  margin-top: 7rem;
+  font-size: 4rem;
+  color: #e9e9e9;
+  text-align: center;
+  font-family: "Rubik Glitch";
+  font-weight: normal;
+}
+
+header h1 {
+  margin-top: 10.5rem;
+  text-align: center;
+  color: #66fcf1;
+  font-family: "Rubik";
+  font-size: 6rem;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+section button {
+  width: 202px;
+  height: 63px;
+  background-color: #161616;
+  color: #e9e9e9e9;
+  font-family: "Rubik";
+  font-size: 2.4rem;
+  cursor: pointer;
+  border-color: #66fcf1;
+  border-radius: 0.5rem;
+  margin-top: 10.5rem;
+}
+
+section button p {
+  font-size: 1.3rem;
+  color: hsla(0, 0%, 60%, 0.914);
 }

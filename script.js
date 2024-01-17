@@ -1,51 +1,51 @@
 const soundFolder = "sound";
 const sound = [
   {
-    fileName: "A.wav",
+    fileName: "A.mp3",
     hotKey: "a",
   },
   {
-    fileName: "A#.wav",
+    fileName: "A#.mp3",
     hotKey: "1",
   },
   {
-    fileName: "B.wav",
+    fileName: "B.mp3",
     hotKey: "b",
   },
   {
-    fileName: "B#.wav",
+    fileName: "C2.mp3",
     hotKey: "2",
   },
   {
-    fileName: "C.wav",
+    fileName: "C.mp3",
     hotKey: "c",
   },
   {
-    fileName: "C#.wav",
+    fileName: "C#.mp3",
     hotKey: "3",
   },
   {
-    fileName: "D.wav",
+    fileName: "D.mp3",
     hotKey: "d",
   },
   {
-    fileName: "D#.wav",
+    fileName: "D#.mp3",
     hotKey: "4",
   },
   {
-    fileName: "E.wav",
+    fileName: "E.mp3",
     hotKey: "e",
   },
   {
-    fileName: "E#.wav",
+    fileName: "E#.mp3",
     hotKey: "5",
   },
   {
-    fileName: "F.wav",
+    fileName: "F.mp3",
     hotKey: "f",
   },
   {
-    fileName: "F#.wav",
+    fileName: "F#.mp3",
     hotKey: "6",
   },
 ];
@@ -73,7 +73,8 @@ sound.forEach((audioSource, index) => {
   buttonEl.appendChild(hotKeyTextEl);
 
   buttonEl.addEventListener("click", () => {
-    const audio = new Audio(`${audio - files}/${sound.fileName}`);
+    const encodedFileName = encodeURIComponent(audioSource.fileName);
+    const audio = new Audio(`./audiofiles/${encodedFileName}`);
     audio.play();
   });
 

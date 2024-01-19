@@ -51,7 +51,6 @@ const sound = [
 ];
 
 const synthPlayerEl = document.getElementById("synth-container");
-let currentNote = "";
 let sectionEl;
 
 sound.forEach((audioSource, index) => {
@@ -72,11 +71,28 @@ sound.forEach((audioSource, index) => {
   hotKeyTextEl.textContent = "hotkey: " + audioSource.hotKey;
   buttonEl.appendChild(hotKeyTextEl);
 
+  const encodedFileName = encodeURIComponent(audioSource.fileName);
+  const audio = new Audio(`./audiofiles/${encodedFileName}`);
+
+  audioSource.audio = audio;
+
+  audioSource.buttonEl = buttonEl;
+
   buttonEl.addEventListener("click", () => {
-    const encodedFileName = encodeURIComponent(audioSource.fileName);
-    const audio = new Audio(`./audiofiles/${encodedFileName}`);
     audio.play();
   });
 
   sectionEl.appendChild(buttonEl);
+});
+
+window.addEventListener("keydown", (event) => {
+  const keyPressed = event.key.toLowerCase();
+
+  const isSoundFound = sound.find(
+    (audioSource) => audioSource.hotKey === keyPressed
+  );
+
+  if (!isSoundFound) return;
+
+  isSoundFound.audio.play();
 });
